@@ -2,13 +2,15 @@ const express = require("express");
 const Disease = require("./diseases.model");
 const router = express.Router();
 const { isAuth, isAdmin } = require("../../middlewares/auth");
+const upload = require("../../middlewares/file");
+const deleteFile = require("../../middlewares/deleteFile");
 
-router.get("/", async (req, res) => {
+router.get("/", async (req, res, next) => {
   try {
-    const allDiseases = await Disease.find();
+    const allDiseases = await Disease.find().populate("categories");
     return res.status(200).json(allDiseases);
   } catch (error) {
-    return res.status(500).json("Error al leer las enfermedades");
+    return next(error);
   }
 });
 
@@ -25,52 +27,74 @@ router.get("/:id", async (req, res, next) => {
 router.get("/getbyname/:name", async (req, res, next) => {
   try {
     const name = req.params.name;
-    const diseasesToFind = await Disease.findOne({ name: name });
-    return res.status(200).json(diseasesToFind);
+    const diseaseToFind = await Disease.findOne({ name: name });
+    return res.status(200).json(diseaseToFind);
   } catch (error) {
     return next(error);
   }
 });
 
-router.post("/create", [isAuth], async (req, res) => {
-  try {
-    const disease = req.body;
-    const newDisease = new Disease(disease);
-    const created = await newDisease.save();
-    return res.status(201).json(created);
-  } catch (error) {
-    return res.status(500).json("Error al crear la enfermedad");
+router.post(
+  "/create",
+  [isAuth],
+  upload.single("img"),
+  async (req, res, next) => {
+    try {
+      const disease = req.body;
+      if (req.file) {
+        disease.img = req.file.path;
+      }
+      const newDisease = new Disease(disease);
+      const created = await newDisease.save();
+      return res.status(201).json(created);
+    } catch (error) {
+      return next(error);
+    }
   }
-});
+);
 
 router.delete("/delete/:id", [isAdmin], async (req, res, next) => {
   try {
     const id = req.params.id;
+    const disease = await Disease.findById(id);
+    if (disease.img) {
+      deleteFile(disease.img);
+    }
     const diseaseToDelete = await Disease.findByIdAndDelete(id);
     return res
       .status(200)
-      .json(`Se ha conseguido borrar la enfermedad ${diseaseToDelete}`);
+      .json(`Se ha conseguido borrar la enfermedad ${diseaseToDelete.name}`);
   } catch (error) {
     return next(error);
   }
 });
 
-router.put("/edit/:id", [isAdmin], async (req, res, next) => {
-  try {
-    const id = req.params.id;
-    const disease = req.body;
-    const diseaseModify = new Disease(disease);
-    diseaseModify._id = id;
-    const diseaseUpdated = await Disease.findByIdAndUpdate(id, diseaseModify);
-    return res
-      .status(200)
-      .json({
+router.put(
+  "/edit/:id",
+  [isAdmin],
+  upload.single("img"),
+  async (req, res, next) => {
+    try {
+      const id = req.params.id;
+      const disease = req.body;
+      const diseaseOld = await Disease.findById(id);
+      if (req.file) {
+        if (diseaseOld.img) {
+          deleteFile(diseaseOld.img);
+        }
+        team.img = req.file.path;
+      }
+      const diseaseModify = new Disease(disease);
+      diseaseModify._id = id;
+      const diseaseUpdated = await Disease.findByIdAndUpdate(id, diseaseModify);
+      return res.status(200).json({
         mensaje: "Se ha conseguido editar la enfermedad",
         diseaseModificado: diseaseUpdated,
       });
-  } catch (error) {
-    return next(error);
+    } catch (error) {
+      return next(error);
+    }
   }
-});
+);
 
 module.exports = router;

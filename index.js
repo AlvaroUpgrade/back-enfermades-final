@@ -5,9 +5,8 @@ const db = require("./src/utils/database/db");
 require("dotenv").config();
 
 const indexRoutes = require("./src/api/index/index.routes");
-const playersRoutes = require("./src/api/players/players.routes");
-const teamsRoutes = require("./src/api/teams/teams.routes");
-const sportsRoutes = require("./src/api/sports/sports.routes");
+const categoriesRoutes = require("./src/api/categories/categories.routes");
+const diseasesRoutes = require("./src/api/diseases/diseases.routes");
 const usersRoutes = require("./src/api/users/users.routes");
 
 db.connectDb();
@@ -28,13 +27,11 @@ server.use(
   })
 );
 
-server.use(express.json({limit: "5mb"}));
+server.use(express.json({ limit: "5mb" }));
 server.use(express.urlencoded({ extended: false }));
-
 server.use("/", indexRoutes);
-server.use("/players", playersRoutes);
-server.use("/sports", sportsRoutes);
-server.use("/teams", teamsRoutes);
+server.use("/categories", categoriesRoutes);
+server.use("/diseases", diseasesRoutes);
 server.use("/users", usersRoutes);
 
 server.use("", (req, res) => {
@@ -42,7 +39,9 @@ server.use("", (req, res) => {
 });
 
 server.use((error, req, res, next) => {
-  return res.status(error.status || 500).json(error.message || "unexpected error");
+  return res
+    .status(error.status || 500)
+    .json(error.message || "unexpected error");
 });
 
 server.listen(PORT, () => {
