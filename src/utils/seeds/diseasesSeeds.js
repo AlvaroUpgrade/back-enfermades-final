@@ -2,31 +2,7 @@ const { mongoose } = require("mongoose");
 const Sport = require("../../api/sports/sports.model");
 const { DB_URL } = require("../database/db");
 
-const sports = [
-  {
-    name: "Futbol",
-    players: 11,
-    matchTime: 90,
-    type: "Deporte de equipo",
-  },
-  {
-    name: "Baloncesto",
-    players: 5,
-    matchTime: 40,
-    type: "Deporte de equipo",
-  },
-  {
-    name: "Balonmano",
-    players: 7,
-    matchTime: 60,
-    type: "Deporte de equipo",
-  },
-  {
-    name: "Tenis",
-    players: 1,
-    type: "Deporte de equipo",
-  },
-];
+const sports = [{}, {}, {}, {}];
 
 mongoose
   .connect(DB_URL)
@@ -41,7 +17,9 @@ mongoose
       console.log("[seed]: Colección Sports eliminada correctamente");
     }
   })
-  .catch((error) => console.log("[seed]: Error eliminando la colección -->", error))
+  .catch((error) =>
+    console.log("[seed]: Error eliminando la colección -->", error)
+  )
   .then(async () => {
     await Sport.insertMany(sports);
     console.log(`[seed]: ${sports.length} nuevos deportes añadidos con éxito`);
@@ -49,6 +27,6 @@ mongoose
   .catch((error) => console.log("[seed]: Error añadiendo los deportes", error))
   .finally(() => mongoose.disconnect());
 
-  const sportLog = "Deportes listo"
+const sportLog = "Deportes listo";
 
-  module.exports = sportLog
+module.exports = sportLog;

@@ -5,7 +5,7 @@ const db = require("./src/utils/database/db");
 require("dotenv").config();
 
 const indexRoutes = require("./src/api/index/index.routes");
-const categoriesRoutes = require("./src/api/categories/categories.routes");
+const centersRoutes = require("./src/api/centers/centers.routes");
 const diseasesRoutes = require("./src/api/diseases/diseases.routes");
 const usersRoutes = require("./src/api/users/users.routes");
 
@@ -30,8 +30,8 @@ server.use(
 server.use(express.json({ limit: "5mb" }));
 server.use(express.urlencoded({ extended: false }));
 server.use("/", indexRoutes);
-server.use("/categories", categoriesRoutes);
 server.use("/diseases", diseasesRoutes);
+server.use("/centers", centersRoutes);
 server.use("/users", usersRoutes);
 
 server.use("", (req, res) => {
