@@ -10,7 +10,7 @@ const centersShema = new Schema(
     ubication: { type: String, required: true, trim: true },
     direction: { type: String, required: true, trim: true },
     number: { type: Number },
-    schedule: { type: Number },
+    schedule: { type: String },
   },
   {
     timestamps: true,
