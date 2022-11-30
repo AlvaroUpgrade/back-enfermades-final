@@ -3,7 +3,7 @@ const Disease = require("./diseases.model");
 const router = express.Router();
 const { isAuth, isAdmin } = require("../../middlewares/auth");
 const upload = require("../../middlewares/file");
-const deleteFile = require("../../middlewares/deleteFile");
+const { deleteFile } = require("../../middlewares/deleteFile");
 
 router.get("/", async (req, res, next) => {
   try {
@@ -53,7 +53,7 @@ router.post(
   }
 );
 
-router.delete("/delete/:id", [isAdmin], async (req, res, next) => {
+router.delete("/delete/:id", async (req, res, next) => {
   try {
     const id = req.params.id;
     const disease = await Disease.findById(id);

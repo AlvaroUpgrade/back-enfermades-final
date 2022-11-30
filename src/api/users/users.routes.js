@@ -7,10 +7,10 @@ const { isAuth, isAdmin } = require("../../middlewares/auth");
 
 router.get("/", async (req, res) => {
   try {
-    const allUsers = await User.find().populate("players");
+    const allUsers = await User.find();
     return res.status(200).json(allUsers);
   } catch (error) {
-    return res.status(500).json("Error al leer los jugadores");
+    return res.status(500).json("Error al leer los usuarios");
   }
 });
 
