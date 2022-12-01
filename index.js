@@ -33,7 +33,7 @@ server.use(express.urlencoded({ extended: false }));
 server.use("/", indexRoutes);
 server.use("/diseases", diseasesRoutes);
 server.use("/centers", centersRoutes);
-server.use("/specialist", specialistsRoutes);
+server.use("/specialists", specialistsRoutes);
 server.use("/users", usersRoutes);
 
 server.use("", (req, res) => {
