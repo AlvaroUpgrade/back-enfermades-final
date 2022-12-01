@@ -8,6 +8,7 @@
     "dev": "nodemon index.js",
     "reset1": "node ./src/utils/seeds/centersSeeds.js",
     "reset2": "node ./src/utils/seeds/diseasesSeeds.js",
+    "reset3": "node ./src/utils/seeds/specialistsSeeds.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

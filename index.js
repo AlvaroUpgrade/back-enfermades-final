@@ -7,6 +7,7 @@ require("dotenv").config();
 const indexRoutes = require("./src/api/index/index.routes");
 const centersRoutes = require("./src/api/centers/centers.routes");
 const diseasesRoutes = require("./src/api/diseases/diseases.routes");
+const specialistsRoutes = require("./src/api/specialists/specialists.routes");
 const usersRoutes = require("./src/api/users/users.routes");
 
 db.connectDb();
@@ -32,6 +33,7 @@ server.use(express.urlencoded({ extended: false }));
 server.use("/", indexRoutes);
 server.use("/diseases", diseasesRoutes);
 server.use("/centers", centersRoutes);
+server.use("/specialist", specialistsRoutes);
 server.use("/users", usersRoutes);
 
 server.use("", (req, res) => {

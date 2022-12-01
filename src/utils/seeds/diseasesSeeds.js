@@ -7,7 +7,7 @@ const diseases = [
     name: "Alzheimer",
     description:
       "La enfermedad de Alzheimer es un trastorno cerebral que destruye lentamente la memoria y la capacidad de pensar y, con el tiempo, la habilidad de llevar a cabo hasta las tareas más sencillas. Las personas con Alzheimer también experimentan cambios en la conducta y la personalidad.",
-    img: "https://www.centrodediasonraiz.com/images/alzehimer1_transparente.png",
+    img: "https://rochepacientes.es/content/dam/roche-pacientes-2/es/assets/images/Fase-preclinica-del-alzheimer.png",
     symptoms: "Cambios en la forma de pensar, recordar, razonar y comportarse",
     treatment:
       "Los medicamentos actuales para tratar la enfermedad de Alzheimer pueden ayudar durante un tiempo con los síntomas que afectan la memoria y para otros cambios cognitivos. Actualmente, se utilizan dos tipos de medicamentos para tratar los síntomas que afectan el sistema cognitivo: Los inhibidores de la colinesterasa y la Memantina (Namenda)",
@@ -15,52 +15,40 @@ const diseases = [
       "El Alzheimer no es solo la pérdida de la memoria, el Alzheimer mata. 1 de 3 personas mayores muere con Alzheimer u otra demencia",
   },
   {
-    name: "Encefalitis",
+    name: "Parkinson",
     description:
-      "La encefalitis es una inflamación del encéfalo que aparece cuando un virus infecta directamente el encéfalo o cuando un virus, una vacuna o algún otro agente provoca inflamación. A veces también se ve afectada la médula espinal, en cuyo caso el trastorno se denomina encefalomielitis.",
-    img: "https://www.neuroblasco.es/images/tratamiento_adultos_encefalitis.png",
+      "La enfermedad de Parkinson es un tipo de trastorno del movimiento. Ocurre cuando las células nerviosas (neuronas) no producen suficiente cantidad de una sustancia química importante en el cerebro conocida como dopamina. Algunos casos son genéticos pero la mayoría no parece darse entre miembros de una misma familia.",
+    img: "https://i0.wp.com/parapupas.com/wp-content/uploads/2020/03/parkinson-1.png?ssl=1",
     symptoms:
-      "Aparecen síntomas como fiebre, cefalea o convulsiones, y también sueño, adormecimiento o confusión.",
+      "Aparecen temblores en las manos, los brazos, las piernas, la mandíbula y la cara. Rigidez en los brazos, las piernas y el tronco, y prblemas de equilibrio y cordinación",
     treatment:
-      " consiste en aliviar los síntomas y, a veces, en el uso de antivíricos,antiinflamatorios, reposo en cama, aporte abundante de líquidos",
+      "La enfermedad de Parkinson no tiene cura, pero los medicamentos pueden ayudar a controlar los síntomas, generalmente en forma notable. En algunos casos más avanzados, se puede aconsejar la cirugía. Se recomiendan algunos cambios en el estilo de vida, especialmente, ejercicios aeróbicos constantes. En algunos casos, la fisioterapia que se centra en el equilibrio y la elongación desempeña un papel importante. Un patólogo del habla y el lenguaje puede ayudar a mejorar los problemas del habla.",
     mortality:
-      "tiene un índice de mortalidad de entre el 5-20% de los casos y deja secuelas en más del 20% de los supervivientes;en Europa, se producen entre 0,5 y 7 casos por cada 100.000 habitantes al año",
+      "La esperanza de vida de una persona con Parkinson puede ser como la de una persona sana. Pueden pasar 15 ó 20 años desde su diagnóstico, en los que la calidad de vida es buena.",
   },
   {
-    name: "Epilepsia",
+    name: "Esclerosis múltiple",
     description:
-      "La epilepsia no es una enfermedad psiquiátrica ni mental, se trata de un problema físico causado por un funcionamiento anormal esporádico de un grupo de neuronas.A grandes rasgos se distinguen dos tipos de crisis: las generalizadas, que afectan a toda la superficie del cerebro y provocan la pérdida de conocimiento y las crisis parciales o focales",
-    img: "https://cdn.ucbcares.es/sites/ccdf08de-0b1f-4319-896d-6edb51d8177a/images/Tipos-de-crisis-epilepticas.png",
+      "Es una enfermedad neurológica y autoinmunitaria en la que las propias células del sistema inmunitario atacan al sistema nervioso central, lo que produce lesiones",
+    img: "https://www.fem.es/wp-content/uploads/2020/05/aaff_fem_figura-persona-es.png",
     symptoms:
-      "Confusion temporal,episodios de ausencias,Rigidez en los musculos,perdida de onocimiento o la consciencia",
+      "Entumecimiento o debilidad en una o más extremidades que se produce típicamente en un lado del cuerpo a la vez, o en las piernas y el tronco, sensaciones de choques eléctricos que se producen con ciertos movimientos del cuello, en especial, al inclinarlo hacia adelante (signo de Lhermitte) y problemas de visión, entre otros síntomas",
     treatment:
-      "Los tratamientos de las crisis epilépticas incluyen,medicamentos,cirugia,dieta cetogena,estimulacion del nervio vago ",
+      "Para la esclerosis múltiple progresiva primaria, el ocrelizumab (Ocrevus) es la única terapia modificadora de la enfermedad aprobada por la FDA. Las personas que reciben este tratamiento tienen un poco menos probabilidades de progresar que aquellas que no son tratadas",
     mortality:
-      "En España, la prevalencia se estima en torno a 8 pacientes por cada 1000 habitantes",
+      "La esclerosis múltiple no es una afección mortal en la mayoría de los casos, y la mayoría de las personas con esclerosis múltiple tienen una esperanza de vida casi normal. Sin embargo, ya que la enfermedad varía mucho según la persona, puede ser difícil que los médicos predigan si la afección empeorará o mejorará.",
   },
   {
-    name: "Migrañas",
+    name: "Esclerosis lateral amiotrófica(ELA)",
     description:
-      "La migraña es un tipo de dolor de cabeza que no conviene confundir con las cefaleas, lo que comúnmente conocemos como dolor de cabeza.",
-    img: "https://www.saneurologia.org/wp-content/uploads/2021/09/Migra%C3%B1a.png",
+      "La esclerosis lateral amiotrófica, o ELA, es una enfermedad progresiva del sistema nervioso que afecta las células nerviosas en el cerebro y la médula espinal, y causa pérdida del control muscular. La ELA a menudo se llama enfermedad de Lou Gehrig, en honor al jugador de béisbol al que se le diagnosticó la enfermedad.",
+    img: "https://i2.wp.com/parapupas.com/wp-content/uploads/2020/05/ela.png?ssl=1",
     symptoms:
-      "Se presenta como un tipo de dolor de cabeza recurrente de intensidad variable. Generalmente produce una sensación pulsátil y/o punzante y suele afectar a uno de los lados de la cabeza. Otros síntomas son: nauseas, vómitos, sensabilidad a la luz, a los olores o al ruido.",
+      "Pérdida de fuerza, atrofia muscular, contracciones musculares, calambres",
     treatment:
-      "Las migrañas pueden tratarse en casa con analgésicos (medicamentos para el dolor) de venta sin receta, como el acetaminofén (Tylenol®), el ibuprofeno (Advil® o Motrin®) o el naproxeno (Aleve®) o con medicamentos que le recete su médico. Cuando ocurre la migraña, también puede ayudar recostarse en un cuarto oscuro y tratar de dormir.Para prevenir las migrañas, trate de evitar las cosas que sabe que pueden desencadenarlas y procure hacer ejercicio regular. Su médico puede también recetarle medicamentos que ayuden a prevenir las migrañas.",
+      "Actualmente, el principal objetivo del tratamiento de la ELA es prolongar la supervivencia y mejorar la calidad de vida de los pacientes a través de medicamentos y cuidados. Así, el mejor tratamiento es una combinación de agentes neuroprotectores, manejo sintomático, nutricional y soporte ventilatorio.",
     mortality:
-      "La migraña, y particularmente la migraña con aura, se asocia a un mayor riesgo de muerte por enfermedad cardiovascular y accidente cerebrovascular hemorrágico,",
-  },
-  {
-    name: "Enfermedades Cerebrovasculares",
-    description:
-      "Estas se producen por una alteración en el funcionamiento de la red de vasos sanguíneos que irrigan el cerebro y le aporta oxígeno y nutrientes al cerebro. Este mal funcionamiento puede producir muerte de áreas cerebrales que dependen de los vasos afectados y localización.",
-    img: "https://www2.uned.es/pea-nutricion-y-dietetica-I/guia/enfermedades/cardiovasculares/img/riesgos_intro.png",
-    symptoms:
-      "Dificultad para hablar y entender lo que otros están diciendo. Se puede experimentar confusión, dificultad para articular las palabras o para entender lo que se dice.Parálisis o entumecimiento de la cara, el brazo o la pierna. Problemas para ver en uno o ambos ojos. Dolor de cabeza. Problemas para caminar.",
-    treatment:
-      "El tratamiento más efectivo para esta enfermedad cardiovascular, siempre que no haya contraindicaciones, es el aislamiento eléctrico de las venas pulmonares. Aunque hay diferentes técnicas para lograrlo, la crioablación con balón es la más novedosa y sencilla. Se realiza un cateterismo cardiaco colocando un balón o globo dentro de cada una de las venas pulmonares y congelando con óxido nitroso su unión con la aurícula izquierda. Un procedimiento que no precisa anestesia general y con ingreso habitual de 24 horas. La mejoría alcanza el 70% con un solo procedimiento. La insuficiencia cardiaca en un problema sanitario de primer orden. Los estudios en España arrojan una prevalencia del5% (unas 100.000 personas en el País Vasco). Es la primera causa de hospitalización en mayores de 65 años, con el 3% de todos los ingresos. El tratamiento habitual es farmacológico, pero en un tercio de los pacientes la asincronía cardiaca por bloqueo de la rama izquierda del sistema de conducción eléctrico es un factor agravante, cuando no la causa primaria. A este grupo se le podría llegar a recomendar la resincronización cardiaca con un marcapasos específico que envía electrodos de estimulación a ambos ventrículos. La mejora alcanza al 75% de los pacientes y en un 10% se llega a normalizar la función. El implante de este tipo de marcapasos es algo más complejo que el convencional pero se suele realizar sin anestesia general y con una estancia hospitalaria de 24 a 48 horas.",
-    mortality:
-      "La enfermedad cardiovascular es la primera causa de muerte en el mundo, con 17,5 millones de fallecimientos al año. Y también lo es en España, donde 122.426 personas fallecieron por esta causa en 2017, lo que supuso el 29% de los decesos totales",
+      "La esclerosis lateral amiotrófica (ELA) es una enfermedad con muy mal pronóstico, con una mortalidad del 50% a los 18 meses tras el diagnóstico. Las unidades multidisciplinares pretenden mejorar la calidad de vida y la supervivencia de los enfermos de ELA",
   },
 ];
 
@@ -72,7 +60,7 @@ mongoose
     if (!allDiseases.length) {
       console.log("[seed]: No se encuentran enfermedades, continuo...");
     } else {
-      console.log(`[seed]: Encontrados ${allDiseases.length} deportes.`);
+      console.log(`[seed]: Encontrados ${allDiseases.length} enfermedades.`);
       await Disease.collection.drop();
       console.log("[seed]: Colección Diseases eliminada correctamente");
     }
@@ -83,7 +71,7 @@ mongoose
   .then(async () => {
     await Disease.insertMany(diseases);
     console.log(
-      `[seed]: ${diseases.length} nuevos enfermedades añadidos con éxito`
+      `[seed]: ${diseases.length} nuevas enfermedades añadidos con éxito`
     );
   })
   .catch((error) =>
