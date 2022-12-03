@@ -71,20 +71,20 @@ router.delete("/delete/:id", async (req, res, next) => {
 
 router.put(
   "/edit/:id",
-  [isAdmin],
+
   upload.single("img"),
   async (req, res, next) => {
     try {
       const id = req.params.id;
       const disease = req.body;
       const diseaseOld = await Disease.findById(id);
+      const diseaseModify = new Disease(disease);
       if (req.file) {
         if (diseaseOld.img) {
           deleteFile(diseaseOld.img);
         }
-        team.img = req.file.path;
+        diseaseModify.img = req.file.path;
       }
-      const diseaseModify = new Disease(disease);
       diseaseModify._id = id;
       const diseaseUpdated = await Disease.findByIdAndUpdate(id, diseaseModify);
       return res.status(200).json({

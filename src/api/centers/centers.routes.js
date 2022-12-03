@@ -53,13 +53,13 @@ router.post(
   }
 );
 
-router.delete("/delete/:id", [isAdmin], async (req, res, next) => {
+router.delete("/delete/:id", async (req, res, next) => {
   try {
     const id = req.params.id;
     const center = await Center.findById(id);
-    if (center.img) {
-      deleteFile(center.img);
-    }
+    // if (center.img) {
+    //   deleteFile(center.img);
+    // }
     const centerToDelete = await Center.findByIdAndDelete(id);
     return res
       .status(200)
@@ -71,20 +71,20 @@ router.delete("/delete/:id", [isAdmin], async (req, res, next) => {
 
 router.put(
   "/edit/:id",
-  [isAdmin],
+
   upload.single("img"),
   async (req, res, next) => {
     try {
       const id = req.params.id;
       const center = req.body;
       const centerOld = await Center.findById(id);
-      if (req.file) {
-        if (centerOld.img) {
-          deleteFile(centerOld.img);
-        }
-        team.img = req.file.path;
-      }
       const centerModify = new Center(center);
+      // if (req.file) {
+      //   if (centerOld.img) {
+      //     deleteFile(centerOld.img);
+      //   }
+      //   centerModify.img = req.file.path;
+      // }
       centerModify._id = id;
       const centerUpdated = await Center.findByIdAndUpdate(id, centerModify);
       return res.status(200).json({

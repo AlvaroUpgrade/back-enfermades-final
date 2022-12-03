@@ -7,7 +7,7 @@ const specialistShema = new Schema(
     name: { type: String, required: true, trim: true },
     surname: { type: String, required: true, trim: true },
     img: { type: String, required: true, trim: true },
-    age: { type: String, required: true, trim: true },
+    age: { type: Number, required: true },
     specialistType: {
       type: String,
       required: true,
