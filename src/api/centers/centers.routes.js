@@ -3,7 +3,7 @@ const Center = require("./centers.model");
 const router = express.Router();
 const { isAuth, isAdmin } = require("../../middlewares/auth");
 const upload = require("../../middlewares/file");
-const deleteFile = require("../../middlewares/deleteFile");
+const { deleteFile } = require("../../middlewares/deleteFile");
 
 router.get("/", async (req, res, next) => {
   try {
@@ -36,7 +36,7 @@ router.get("/getbyname/:name", async (req, res, next) => {
 
 router.post(
   "/create",
-  [isAuth],
+  [isAdmin],
   upload.single("img"),
   async (req, res, next) => {
     try {
@@ -53,13 +53,13 @@ router.post(
   }
 );
 
-router.delete("/delete/:id", async (req, res, next) => {
+router.delete("/delete/:id", [isAdmin], async (req, res, next) => {
   try {
     const id = req.params.id;
     const center = await Center.findById(id);
-    // if (center.img) {
-    //   deleteFile(center.img);
-    // }
+    if (center.img) {
+      deleteFile(center.img);
+    }
     const centerToDelete = await Center.findByIdAndDelete(id);
     return res
       .status(200)
@@ -71,7 +71,7 @@ router.delete("/delete/:id", async (req, res, next) => {
 
 router.put(
   "/edit/:id",
-
+  [isAdmin],
   upload.single("img"),
   async (req, res, next) => {
     try {

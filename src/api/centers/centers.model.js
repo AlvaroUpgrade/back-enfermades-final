@@ -12,6 +12,7 @@ const centersShema = new Schema(
     number: { type: Number },
     schedule: { type: String },
   },
+
   {
     timestamps: true,
   }

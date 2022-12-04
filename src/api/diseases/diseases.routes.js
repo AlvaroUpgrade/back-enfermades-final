@@ -36,7 +36,7 @@ router.get("/getbyname/:name", async (req, res, next) => {
 
 router.post(
   "/create",
-  [isAuth],
+  [isAdmin],
   upload.single("img"),
   async (req, res, next) => {
     try {
@@ -53,7 +53,7 @@ router.post(
   }
 );
 
-router.delete("/delete/:id", async (req, res, next) => {
+router.delete("/delete/:id", [isAdmin], async (req, res, next) => {
   try {
     const id = req.params.id;
     const disease = await Disease.findById(id);
@@ -71,7 +71,7 @@ router.delete("/delete/:id", async (req, res, next) => {
 
 router.put(
   "/edit/:id",
-
+  [isAdmin],
   upload.single("img"),
   async (req, res, next) => {
     try {
