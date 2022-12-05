@@ -79,12 +79,12 @@ router.put(
       const center = req.body;
       const centerOld = await Center.findById(id);
       const centerModify = new Center(center);
-      // if (req.file) {
-      //   if (centerOld.img) {
-      //     deleteFile(centerOld.img);
-      //   }
-      //   centerModify.img = req.file.path;
-      // }
+      if (req.file) {
+        if (centerOld.img) {
+          deleteFile(centerOld.img);
+        }
+        centerModify.img = req.file.path;
+      }
       centerModify._id = id;
       const centerUpdated = await Center.findByIdAndUpdate(id, centerModify);
       return res.status(200).json({

@@ -82,12 +82,12 @@ router.put(
       const specialist = req.body;
       const specialistOld = await Specialist.findById(id);
       const specialistModify = new Specialist(specialist);
-      // if (req.file) {
-      //   if (specialistOld.img) {
-      //     deleteFile(specialistOld.img);
-      //   }
-      //   specialistModify.img = req.file.path;
-      // }
+      if (req.file) {
+        if (specialistOld.img) {
+          deleteFile(specialistOld.img);
+        }
+        specialistModify.img = req.file.path;
+      }
       specialistModify._id = id;
       const specialistUpdated = await Specialist.findByIdAndUpdate(
         id,
