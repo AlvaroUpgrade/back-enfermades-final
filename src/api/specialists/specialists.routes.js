@@ -5,7 +5,7 @@ const { isAuth, isAdmin } = require("../../middlewares/auth");
 const upload = require("../../middlewares/file");
 const { deleteFile } = require("../../middlewares/deleteFile");
 
-router.get("/", [isAuth], async (req, res, next) => {
+router.get("/", async (req, res, next) => {
   try {
     const allSpecialists = await Specialist.find();
     return res.status(200).json(allSpecialists);
