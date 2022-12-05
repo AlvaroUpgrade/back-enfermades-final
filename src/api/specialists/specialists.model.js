@@ -14,9 +14,9 @@ const specialistShema = new Schema(
       trim: true,
       enum: [
         "Fisioterapeuta",
-        "Auxiliar de enfermeria",
+        "Auxiliar de Enfermeria",
         "Terapeuta",
-        "Psicologo especializado",
+        "Psicologo Especializado",
         "Logopeda",
       ],
     },
