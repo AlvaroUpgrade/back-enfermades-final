@@ -1,14 +1,13 @@
 const express = require("express");
-const cloudinary = require("cloudinary").v2;
-const cors = require("cors");
-const db = require("./src/utils/database/db");
-require("dotenv").config();
-
 const indexRoutes = require("./src/api/index/index.routes");
 const centersRoutes = require("./src/api/centers/centers.routes");
 const diseasesRoutes = require("./src/api/diseases/diseases.routes");
 const specialistsRoutes = require("./src/api/specialists/specialists.routes");
 const usersRoutes = require("./src/api/users/users.routes");
+const cors = require("cors");
+require("dotenv").config();
+const db = require("./src/utils/database/db");
+const cloudinary = require("cloudinary").v2;
 
 db.connectDb();
 
