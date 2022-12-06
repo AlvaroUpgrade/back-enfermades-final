@@ -3,8 +3,8 @@ const Center = require("./centers.model");
 const router = express.Router();
 const { isAuth, isAdmin } = require("../../middlewares/auth");
 const upload = require("../../middlewares/file");
-const { deleteFile } = require("../../middlewares/deleteFile");
-
+const { deleteFile } = require("../../middlewares/deletefile.js");
+// const { deleteFile } = require("../../middlewares/deleteFile");
 router.get("/", async (req, res, next) => {
   try {
     const allCenters = await Center.find();
