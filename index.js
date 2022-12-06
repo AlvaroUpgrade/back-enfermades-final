@@ -41,7 +41,7 @@ server.use("", (req, res) => {
 
 server.use((error, req, res, next) => {
   return res
-    
+    .status(error.status || 500)
     .json(error.message || "unexpected error");
 });
 
